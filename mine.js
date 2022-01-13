@@ -2,7 +2,7 @@ let obbj=[
     {
         Name : "nike",
         Description : "nike story",
-        Photo : "photo11.png",
+        Photo : "",
         Create_add : new Date(2022/01/01),
         Category : "Sport",
         Active : true,
@@ -11,7 +11,7 @@ let obbj=[
    {
     Name : "nike",
     Description : "nike story",
-    Photo : "photo11.png",
+    Photo : "",
     Create_add : new Date(),
     Category : "Sport",
     Active : true,
@@ -26,7 +26,7 @@ obbj.forEach(elm => {
     }else{
         nike2 = "2022/01/01";
     }
-    document.getElementById("time").innerHTML=nike2;
+   
     let vis;
     if (elm.Visit > 100) {
         vis = "პოპულარული";
@@ -34,7 +34,7 @@ obbj.forEach(elm => {
     }else{
         vis = "არაა პოპულარული";
     }
-    document.getElementById("seen").innerHTML=vis;
+    
 
     let sprt;
     if (elm.Category = "Sport" && elm.Active == true ) {
@@ -43,16 +43,26 @@ obbj.forEach(elm => {
     }else{
         sprt = 'sport';
     }
-    document.getElementById("sport11").innerHTML=sprt;
+    
 
         
-        let pth;
-        if (elm.Photo = "photo11.png") {
-          pth = "photo11.png";
-        } else {
-          pth = "";
-        }
-        document.getElementById("photoss").innerHTML=pth;
+    let img;
+    if (elm.Photo == '') {
+        img = "https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png"
+    }else{
+        img = elm.Photo;
+    }
+
+    let cards = `<div class="card" style="width: 18rem;">
+    <img id="photoss" src="${img}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 id="time" class="card-title">${vis}</h5>
+      <p id="seen" class="card-text">${sprt}</p>
+      <p id="sport11">${nike2}</p>
+    </div> 
+  </div>
+  `
+       document.getElementById("app").innerHTML += cards;
       
 
 });
