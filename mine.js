@@ -2,7 +2,7 @@ let obbj=[
     {
         Name : "nike",
         Description : "nike story",
-        Photo : src = "photo11.png",
+        Photo : "photo11.png",
         Create_add : new Date(2022/01/01),
         Category : "Sport",
         Active : true,
@@ -11,7 +11,7 @@ let obbj=[
    {
     Name : "nike",
     Description : "nike story",
-    Photo : src = "photo11.png",
+    Photo : "photo11.png",
     Create_add : new Date(),
     Category : "Sport",
     Active : true,
@@ -45,11 +45,14 @@ obbj.forEach(elm => {
     }
     document.getElementById("sport11").innerHTML=sprt;
 
-    let phot = Document.getElementById("photoss").innerHTML = photoss;
-    if (phot.src.match("")) {
-        phot.src = "photo11.png";
-    }else{
-        phot.src = "photo11.png";
-    }
+        
+        let pth;
+        if (elm.Photo = "photo11.png") {
+          pth = "photo11.png";
+        } else {
+          pth = "";
+        }
+        document.getElementById("photoss").innerHTML=pth;
+      
 
 });
